@@ -7,12 +7,14 @@ endif
 " Plugin Loading
 call plug#begin()
 Plug 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 call plug#end()
 
 " Settings for latexmk
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_method = 'skim'
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+"let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
 
 " Backup folder
@@ -69,8 +71,12 @@ noremap j gj
 
 " Ultisnips
 
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"let g:UltiSnipsSnippetsDir="/home/mairhofer/.vim/snips"
-"let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetsDir="/Users/dm/.vim/snips"
+let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
+
+setlocal spell
+set spelllang=en_gb
+"inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
